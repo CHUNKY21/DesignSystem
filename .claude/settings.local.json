@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__3aae02a8-be47-4a5f-8f6a-54b582c462ef__whoami",
+      "mcp__3aae02a8-be47-4a5f-8f6a-54b582c462ef__create_new_file",
+      "mcp__3aae02a8-be47-4a5f-8f6a-54b582c462ef__use_figma",
+      "Bash(npm list *)",
+      "Bash(npm install *)",
+      "Bash(git init *)",
+      "Bash(git config *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}

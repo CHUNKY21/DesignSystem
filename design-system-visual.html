@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Shopper Design System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #FEFDFB;
+            color: #1F2937;
+            line-height: 1.6;
+            padding: 60px 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #2D6A4F;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #6B7280;
+            font-weight: 400;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2D6A4F;
+            margin-bottom: 30px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #D97706;
+        }
+
+        .grid {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .color-swatch {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .swatch-color {
+            height: 120px;
+            width: 100%;
+        }
+
+        .swatch-info {
+            padding: 16px;
+            background: white;
+        }
+
+        .swatch-name {
+            font-weight: 600;
+            color: #1F2937;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .swatch-hex {
+            font-size: 12px;
+            color: #6B7280;
+            font-family: monospace;
+            margin-bottom: 8px;
+        }
+
+        .swatch-usage {
+            font-size: 12px;
+            color: #9CA3AF;
+            line-height: 1.5;
+        }
+
+        .type-scale {
+            display: grid;
+            gap: 24px;
+        }
+
+        .type-example {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #D97706;
+        }
+
+        .type-label {
+            font-size: 12px;
+            color: #6B7280;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .type-specs {
+            font-size: 12px;
+            color: #9CA3AF;
+            margin-top: 8px;
+        }
+
+        .display {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.1;
+            color: #2D6A4F;
+        }
+
+        .display-sm {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #2D6A4F;
+        }
+
+        .h1 {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #1F2937;
+        }
+
+        .h2 {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #1F2937;
+        }
+
+        .h3 {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #1F2937;
+        }
+
+        .h4 {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.5;
+            color: #374151;
+        }
+
+        .body {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: #4B5563;
+        }
+
+        .body-bold {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.6;
+            color: #1F2937;
+        }
+
+        .small {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #6B7280;
+        }
+
+        .micro {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1.4;
+            color: #9CA3AF;
+        }
+
+        .spacing-grid {
+            display: grid;
+            gap: 40px;
+        }
+
+        .space-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .space-block {
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #D97706 0%, #F59E0B 100%);
+            border-radius: 8px;
+        }
+
+        .space-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1F2937;
+            min-width: 100px;
+        }
+
+        .radius-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+        }
+
+        .radius-block {
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #2D6A4F 0%, #40916C 100%);
+            color: white;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .shadow-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .shadow-block {
+            height: 120px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: #6B7280;
+        }
+
+        .shadow-sm {
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .shadow-md {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .shadow-lg {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        th {
+            background: #F3F4F6;
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            color: #1F2937;
+            border-bottom: 2px solid #E5E7EB;
+        }
+
+        td {
+            padding: 16px;
+            border-bottom: 1px solid #E5E7EB;
+            font-size: 14px;
+            color: #4B5563;
+        }
+
+        tr:hover {
+            background: #FAFAFA;
+        }
+
+        .brand-statement {
+            background: linear-gradient(135deg, #2D6A4F 0%, #40916C 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 60px;
+        }
+
+        .brand-statement h3 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+
+        .brand-statement p {
+            font-size: 16px;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Clean Shopper</h1>
+            <p class="subtitle">Design System v1.0 — AI-powered ingredient research for conscious consumers</p>
+        </header>
+
+        <div class="brand-statement">
+            <h3>Brand Direction</h3>
+            <p>Clean Shopper embodies <strong>trustworthy clarity, organic authenticity, informed boldness, and expressive energy</strong>. Like a knowledgeable friend at a farmer's market who speaks with conviction, the app feels approachable, transparent, genuinely helpful, and unapologetically confident. Bold typography and strong color choices convey expertise and decisiveness. Expressive design moments celebrate informed choices and create excitement. This creates confidence that users are making the right choices for their families.</p>
+        </div>
+
+        <!-- Colors -->
+        <section>
+            <h2>Colors</h2>
+
+            <h3 style="font-size: 20px; margin-top: 40px; margin-bottom: 20px; color: #1F2937;">Primary</h3>
+            <div class="grid">
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #2D6A4F;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Sage Green (Primary)</div>
+                        <div class="swatch-hex">#2D6A4F</div>
+                        <div class="swatch-usage">Primary buttons, active navigation, brand moments. Conveys trust, growth, and natural wellness.</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #40916C;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Sage Lighter</div>
+                        <div class="swatch-hex">#40916C</div>
+                        <div class="swatch-usage">Hover states, secondary fills, reinforcement moments.</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #1B4332;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Sage Darker</div>
+                        <div class="swatch-hex">#1B4332</div>
+                        <div class="swatch-usage">Pressed states, focus indicators, strong emphasis.</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="font-size: 20px; margin-top: 40px; margin-bottom: 20px; color: #1F2937;">Secondary & Accent</h3>
+            <div class="grid">
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #F5F1E8;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Warm Cream</div>
+                        <div class="swatch-hex">#F5F1E8</div>
+                        <div class="swatch-usage">Secondary background, card fills, creates organic warmth.</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #D97706;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Golden Orange (Accent)</div>
+                        <div class="swatch-hex">#D97706</div>
+                        <div class="swatch-usage"><strong>Bold highlights</strong>, badges, secondary CTAs. Use boldly for featured products and expressive moments.</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #F59E0B;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Golden Lighter</div>
+                        <div class="swatch-hex">#F59E0B</div>
+                        <div class="swatch-usage">Hover states for accent elements, expressive interaction feedback.</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #C65D00;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Golden Bold</div>
+                        <div class="swatch-hex">#C65D00</div>
+                        <div class="swatch-usage"><strong>Pressed states</strong>, strong emphasis, alternative primary CTAs. Maximum boldness.</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="font-size: 20px; margin-top: 40px; margin-bottom: 20px; color: #1F2937;">Semantic Colors</h3>
+            <div class="grid">
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #10D981;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Success / Clean</div>
+                        <div class="swatch-hex">#10D981</div>
+                        <div class="swatch-usage">Bold, vibrant green. Clean/safe products, positive confirmations, verified badges.</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #FBBF24;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Warning / Caution</div>
+                        <div class="swatch-hex">#FBBF24</div>
+                        <div class="swatch-usage">Bold, vibrant amber. Ingredient needs review, unverified claims, caution moments.</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #F97316;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Error / Harmful</div>
+                        <div class="swatch-hex">#F97316</div>
+                        <div class="swatch-usage">Bold, vibrant orange-red. Harmful ingredient, safety concern, ingredient to avoid.</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="font-size: 20px; margin-top: 40px; margin-bottom: 20px; color: #1F2937;">Neutrals</h3>
+            <div class="grid">
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #FEFDFB; border: 1px solid #E5E7EB;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Neutral 50</div>
+                        <div class="swatch-hex">#FEFDFB</div>
+                        <div class="swatch-usage">Page background, creates calm foundation.</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #F9FAFB;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Neutral 100</div>
+                        <div class="swatch-hex">#F9FAFB</div>
+                        <div class="swatch-usage">Card backgrounds, surface fills, subtle contrast.</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #E5E7EB;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Neutral 200</div>
+                        <div class="swatch-hex">#E5E7EB</div>
+                        <div class="swatch-usage">Borders, dividers, visual separation.</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #9CA3AF;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Neutral 400</div>
+                        <div class="swatch-hex">#9CA3AF</div>
+                        <div class="swatch-usage">Placeholder text, disabled states, de-emphasized content.</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #6B7280;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Neutral 600</div>
+                        <div class="swatch-hex">#6B7280</div>
+                        <div class="swatch-usage">Secondary text, supporting copy, metadata.</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background: #1F2937;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Neutral 900</div>
+                        <div class="swatch-hex">#1F2937</div>
+                        <div class="swatch-usage">Primary text, headings, strongest contrast.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography -->
+        <section>
+            <h2>Typography</h2>
+            <p style="color: #6B7280; margin-bottom: 30px;"><strong>Font:</strong> Inter (Google Fonts) — Clean, modern, accessible. Balances warmth with clarity.</p>
+
+            <div class="type-scale">
+                <div class="type-example">
+                    <div class="type-label">Display — Bold & Expressive</div>
+                    <div class="display">Discover Clean Products</div>
+                    <div class="type-specs">56px / 800 Weight / 1.1 Line Height — Hero headlines with maximum impact</div>
+                </div>
+
+                <div class="type-example">
+                    <div class="type-label">Display Small — Bold</div>
+                    <div class="display-sm">Your Safe Shopping Guide</div>
+                    <div class="type-specs">48px / 700 Weight / 1.2 Line Height — Large sections, campaign moments</div>
+                </div>
+
+                <div class="type-example">
+                    <div class="type-label">H1 — Page Title</div>
+                    <div class="h1">Trusted Recommendations</div>
+                    <div class="type-specs">42px / 700 Weight / 1.2 Line Height — Main page headlines with authority</div>
+                </div>
+
+                <div class="type-example">
+                    <div class="type-label">H2 — Section Header</div>
+                    <div class="h2">Product Recommendations</div>
+                    <div class="type-specs">32px / 700 Weight / 1.3 Line Height — Section dividers and major groups</div>
+                </div>
+
+                <div class="type-example">
+                    <div class="type-label">H3 — Card Title</div>
+                    <div class="h3">Ingredient Analysis</div>
+                    <div class="type-specs">24px / 600 Weight / 1.4 Line Height — Card titles, subsection headers</div>
+                </div>
+
+                <div class="type-example">
+                    <div class="type-label">H4 — Label</div>
+                    <div class="h4">Key Details</div>
+                    <div class="type-specs">18px / 600 Weight / 1.5 Line Height — Labels, button text, small headers</div>
+                </div>
+
+                <div class="type-example">
+                    <div class="type-label">Body — Main Copy</div>
+                    <div class="body">This product contains no harmful chemicals and aligns with your saved preferences. The ingredients have been verified against EWG Skin Deep standards.</div>
+                    <div class="type-specs">16px / 400 Weight / 1.6 Line Height — Main body copy, descriptions</div>
+                </div>
+
+                <div class="type-example">
+                    <div class="type-label">Body Bold — Emphasized Copy</div>
+                    <div class="body-bold">✓ Clean & Verified Safe • 4.8 stars (127 reviews)</div>
+                    <div class="type-specs">16px / 600 Weight / 1.6 Line Height — Emphasized callouts, key information</div>
+                </div>
+
+                <div class="type-example">
+                    <div class="type-label">Small — Supporting Text</div>
+                    <div class="small">Verified with EWG • Updated 2 days ago • 4.8 stars (127 reviews)</div>
+                    <div class="type-specs">14px / 400 Weight / 1.5 Line Height — Supporting text, metadata, tags</div>
+                </div>
+
+                <div class="type-example">
+                    <div class="type-label">Micro — Legal & Timestamps</div>
+                    <div class="micro">Last updated: September 12, 2026 • Privacy Policy • Terms of Service</div>
+                    <div class="type-specs">12px / 400 Weight / 1.4 Line Height — Legal text, timestamps, minimal UI</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spacing -->
+        <section>
+            <h2>Spacing Scale</h2>
+            <p style="color: #6B7280; margin-bottom: 30px;">Base unit: 8px. Spacing creates breathing room, reflecting the calm, deliberate nature of conscious consumption.</p>
+
+            <div class="spacing-grid">
+                <div class="space-row">
+                    <div class="space-label">space-xs</div>
+                    <div class="space-block" style="width: 8px; height: 24px;"></div>
+                    <span style="color: #6B7280; font-size: 14px;">8px — Icon padding, tight internal spacing</span>
+                </div>
+                <div class="space-row">
+                    <div class="space-label">space-sm</div>
+                    <div class="space-block" style="width: 16px; height: 24px;"></div>
+                    <span style="color: #6B7280; font-size: 14px;">16px — Compact padding within components</span>
+                </div>
+                <div class="space-row">
+                    <div class="space-label">space-md</div>
+                    <div class="space-block" style="width: 24px; height: 24px;"></div>
+                    <span style="color: #6B7280; font-size: 14px;">24px — Standard internal component padding</span>
+                </div>
+                <div class="space-row">
+                    <div class="space-label">space-lg</div>
+                    <div class="space-block" style="width: 32px; height: 24px;"></div>
+                    <span style="color: #6B7280; font-size: 14px;">32px — Card padding, section internal spacing</span>
+                </div>
+                <div class="space-row">
+                    <div class="space-label">space-xl</div>
+                    <div class="space-block" style="width: 48px; height: 24px;"></div>
+                    <span style="color: #6B7280; font-size: 14px;">48px — Between components on a page</span>
+                </div>
+                <div class="space-row">
+                    <div class="space-label">space-2xl</div>
+                    <div class="space-block" style="width: 64px; height: 24px;"></div>
+                    <span style="color: #6B7280; font-size: 14px;">64px — Between major sections</span>
+                </div>
+                <div class="space-row">
+                    <div class="space-label">space-3xl</div>
+                    <div class="space-block" style="width: 96px; height: 24px;"></div>
+                    <span style="color: #6B7280; font-size: 14px;">96px — Page-level margins and large section gaps</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Border Radius -->
+        <section>
+            <h2>Border Radius</h2>
+            <div class="radius-examples">
+                <div>
+                    <div class="radius-block" style="border-radius: 4px;">radius-sm<br>4px</div>
+                    <p style="font-size: 12px; color: #6B7280; margin-top: 12px; text-align: center;">Badges, tags, small elements</p>
+                </div>
+                <div>
+                    <div class="radius-block" style="border-radius: 8px;">radius-md<br>8px</div>
+                    <p style="font-size: 12px; color: #6B7280; margin-top: 12px; text-align: center;">Inputs, buttons, small cards</p>
+                </div>
+                <div>
+                    <div class="radius-block" style="border-radius: 12px;">radius-lg<br>12px</div>
+                    <p style="font-size: 12px; color: #6B7280; margin-top: 12px; text-align: center;">Cards, modals, large containers</p>
+                </div>
+                <div>
+                    <div class="radius-block" style="border-radius: 9999px;">radius-full<br>9999px</div>
+                    <p style="font-size: 12px; color: #6B7280; margin-top: 12px; text-align: center;">Pills, avatars, fully rounded</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shadows -->
+        <section>
+            <h2>Shadows</h2>
+            <p style="color: #6B7280; margin-bottom: 30px;">Shadows add dimension and expressiveness. From subtle to bold, use shadows to guide attention and create visual hierarchy.</p>
+            <div class="shadow-examples">
+                <div class="shadow-block shadow-sm">shadow-sm<br>0 1px 2px rgba(0,0,0,0.05)<br>Subtle lift</div>
+                <div class="shadow-block shadow-md">shadow-md<br>0 4px 6px rgba(0,0,0,0.1)<br>Active interaction</div>
+                <div class="shadow-block shadow-lg">shadow-lg<br>0 10px 15px rgba(0,0,0,0.15)<br>Strong emphasis</div>
+                <div class="shadow-block" style="box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2); background: linear-gradient(135deg, #2D6A4F 0%, #40916C 100%); color: white; font-weight: 600;">shadow-xl<br>0 20px 25px rgba(0,0,0,0.2)<br><strong>Expressive moments</strong></div>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
