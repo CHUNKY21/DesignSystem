@@ -27,3 +27,9 @@ export { Toast } from './Toast'
 export { PreferenceChip } from './PreferenceChip'
 export { SettingsSection } from './SettingsSection'
 export { PreferencesForm } from './PreferencesForm'
+
+// Phase 6: Polish & Edge Cases
+export { Skeleton, SkeletonGroup } from './Skeleton'
+export { Badge, BadgeGroup } from './Badge'
+export { Divider } from './Divider'
+export { ErrorBoundary } from './ErrorBoundary'
