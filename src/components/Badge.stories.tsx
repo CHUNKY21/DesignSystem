@@ -82,13 +82,17 @@ export const Small: Story = {
 export const WithIcon: Story = {
   args: {
     label: 'Featured',
-    variant: 'accent',
+    variant: 'success',
     size: 'md',
     icon: '⭐',
   },
 }
 
 export const BadgeGroupExample: Story = {
+  args: {
+    label: '',
+    variant: 'primary',
+  },
   render: () => (
     <BadgeGroup
       badges={[

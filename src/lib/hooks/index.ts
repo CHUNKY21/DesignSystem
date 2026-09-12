@@ -1,1 +1,1 @@
-// Custom hooks go here
+export { useTheme } from './useTheme'

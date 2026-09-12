@@ -1,3 +1,17 @@
+/* Design System Token Variables */
+@import './styles/tokens.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Base styles */
+@layer base {
+  body {
+    @apply bg-neutral-50 text-neutral-900 transition-colors duration-base;
+  }
+
+  [data-theme='dark'] body {
+    @apply bg-neutral-900 text-neutral-50;
+  }
+}

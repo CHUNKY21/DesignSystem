@@ -1,4 +1,9 @@
 import type { Config } from 'tailwindcss'
+import { colors } from './src/tokens/colors'
+import { spacing } from './src/tokens/spacing'
+import { borderRadius } from './src/tokens/borderRadius'
+import { shadows } from './src/tokens/shadows'
+import { typography } from './src/tokens/typography'
 
 export default {
   content: [
@@ -8,60 +13,56 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        primary: '#2D6A4F',
-        'primary-light': '#40916C',
-        'primary-dark': '#1B4332',
-        secondary: '#F5F1E8',
-        'secondary-light': '#FAF8F3',
-        accent: '#D97706',
-        'accent-light': '#F59E0B',
-        'accent-bold': '#C65D00',
-        success: '#10D981',
-        warning: '#FBBF24',
-        error: '#F97316',
-        neutral: {
-          50: '#FEFDFB',
-          100: '#F9FAFB',
-          200: '#E5E7EB',
-          400: '#9CA3AF',
-          600: '#6B7280',
-          900: '#1F2937',
-        },
-      },
-      spacing: {
-        'space-xs': '8px',
-        'space-sm': '16px',
-        'space-md': '24px',
-        'space-lg': '32px',
-        'space-xl': '48px',
-        'space-2xl': '64px',
-        'space-3xl': '96px',
-        'space-4xl': '128px',
-      },
-      borderRadius: {
-        'radius-sm': '4px',
-        'radius-md': '8px',
-        'radius-lg': '12px',
-        'radius-full': '9999px',
-      },
+      colors,
+      spacing,
+      borderRadius,
       boxShadow: {
-        'shadow-sm': '0 1px 2px rgba(0, 0, 0, 0.05)',
-        'shadow-md': '0 4px 6px rgba(0, 0, 0, 0.1)',
-        'shadow-lg': '0 10px 15px rgba(0, 0, 0, 0.15)',
-        'shadow-xl': '0 20px 25px rgba(0, 0, 0, 0.2)',
+        'shadow-sm': shadows['shadow-sm'],
+        'shadow-md': shadows['shadow-md'],
+        'shadow-lg': shadows['shadow-lg'],
+        'shadow-xl': shadows['shadow-xl'],
       },
       fontSize: {
-        display: ['56px', { lineHeight: '1.1', fontWeight: '800' }],
-        'display-sm': ['48px', { lineHeight: '1.2', fontWeight: '700' }],
-        h1: ['42px', { lineHeight: '1.2', fontWeight: '700' }],
-        h2: ['32px', { lineHeight: '1.3', fontWeight: '700' }],
-        h3: ['24px', { lineHeight: '1.4', fontWeight: '600' }],
-        h4: ['18px', { lineHeight: '1.5', fontWeight: '600' }],
-        body: ['16px', { lineHeight: '1.6', fontWeight: '400' }],
-        'body-bold': ['16px', { lineHeight: '1.6', fontWeight: '600' }],
-        small: ['14px', { lineHeight: '1.5', fontWeight: '400' }],
-        micro: ['12px', { lineHeight: '1.4', fontWeight: '400' }],
+        display: [typography.fontSize.display.size, {
+          lineHeight: typography.fontSize.display.lineHeight,
+          fontWeight: typography.fontSize.display.fontWeight,
+        }],
+        'display-sm': [typography.fontSize['display-sm'].size, {
+          lineHeight: typography.fontSize['display-sm'].lineHeight,
+          fontWeight: typography.fontSize['display-sm'].fontWeight,
+        }],
+        h1: [typography.fontSize.h1.size, {
+          lineHeight: typography.fontSize.h1.lineHeight,
+          fontWeight: typography.fontSize.h1.fontWeight,
+        }],
+        h2: [typography.fontSize.h2.size, {
+          lineHeight: typography.fontSize.h2.lineHeight,
+          fontWeight: typography.fontSize.h2.fontWeight,
+        }],
+        h3: [typography.fontSize.h3.size, {
+          lineHeight: typography.fontSize.h3.lineHeight,
+          fontWeight: typography.fontSize.h3.fontWeight,
+        }],
+        h4: [typography.fontSize.h4.size, {
+          lineHeight: typography.fontSize.h4.lineHeight,
+          fontWeight: typography.fontSize.h4.fontWeight,
+        }],
+        body: [typography.fontSize.body.size, {
+          lineHeight: typography.fontSize.body.lineHeight,
+          fontWeight: typography.fontSize.body.fontWeight,
+        }],
+        'body-bold': [typography.fontSize['body-bold'].size, {
+          lineHeight: typography.fontSize['body-bold'].lineHeight,
+          fontWeight: typography.fontSize['body-bold'].fontWeight,
+        }],
+        small: [typography.fontSize.small.size, {
+          lineHeight: typography.fontSize.small.lineHeight,
+          fontWeight: typography.fontSize.small.fontWeight,
+        }],
+        micro: [typography.fontSize.micro.size, {
+          lineHeight: typography.fontSize.micro.lineHeight,
+          fontWeight: typography.fontSize.micro.fontWeight,
+        }],
       },
     },
   },
