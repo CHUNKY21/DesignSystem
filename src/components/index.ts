@@ -22,3 +22,8 @@ export { ShoppingList } from './ShoppingList'
 export { EmptyState } from './EmptyState'
 export { Modal } from './Modal'
 export { Toast } from './Toast'
+
+// Phase 5: User Preferences & Settings
+export { PreferenceChip } from './PreferenceChip'
+export { SettingsSection } from './SettingsSection'
+export { PreferencesForm } from './PreferencesForm'
