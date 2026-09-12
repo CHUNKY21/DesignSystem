@@ -128,30 +128,36 @@ export const CheckboxWithHelper: StoryObj<typeof checkboxMeta> = {
   },
 }
 
-export const CheckboxGroup: StoryObj<typeof checkboxMeta> = {
-  render: () => (
-    <CheckboxGroup
-      legend="Select your interests"
-      options={[
-        { value: 'cleaning', label: 'Cleaning products' },
-        { value: 'personal', label: 'Personal care' },
-        { value: 'food', label: 'Food & pantry' },
-      ]}
-    />
-  ),
+export const GroupBasic: StoryObj<typeof checkboxMeta> = {
+  render: () => {
+    const GroupComponent = CheckboxGroup
+    return (
+      <GroupComponent
+        legend="Select your interests"
+        options={[
+          { value: 'cleaning', label: 'Cleaning products' },
+          { value: 'personal', label: 'Personal care' },
+          { value: 'food', label: 'Food & pantry' },
+        ]}
+      />
+    )
+  },
 }
 
-export const CheckboxGroupWithHelper: StoryObj<typeof checkboxMeta> = {
-  render: () => (
-    <CheckboxGroup
-      legend="Allergies"
-      options={[
-        { value: 'nuts', label: 'Nuts', helperText: 'Tree nuts and peanuts' },
-        { value: 'dairy', label: 'Dairy', helperText: 'Milk and lactose' },
-        { value: 'gluten', label: 'Gluten' },
-      ]}
-    />
-  ),
+export const GroupWithHelper: StoryObj<typeof checkboxMeta> = {
+  render: () => {
+    const GroupComponent = CheckboxGroup
+    return (
+      <GroupComponent
+        legend="Allergies"
+        options={[
+          { value: 'nuts', label: 'Nuts', helperText: 'Tree nuts and peanuts' },
+          { value: 'dairy', label: 'Dairy', helperText: 'Milk and lactose' },
+          { value: 'gluten', label: 'Gluten' },
+        ]}
+      />
+    )
+  },
 }
 
 // RADIO STORIES
@@ -175,32 +181,38 @@ export const RadioWithHelper: StoryObj<typeof radioMeta> = {
   },
 }
 
-export const RadioGroup: StoryObj<typeof radioMeta> = {
-  render: () => (
-    <RadioGroup
-      legend="Shipping method"
-      name="shipping"
-      options={[
-        { value: 'standard', label: 'Standard (5-7 days)' },
-        { value: 'express', label: 'Express (2-3 days)' },
-        { value: 'overnight', label: 'Overnight' },
-      ]}
-    />
-  ),
+export const GroupRadio: StoryObj<typeof radioMeta> = {
+  render: () => {
+    const GroupComponent = RadioGroup
+    return (
+      <GroupComponent
+        legend="Shipping method"
+        name="shipping"
+        options={[
+          { value: 'standard', label: 'Standard (5-7 days)' },
+          { value: 'express', label: 'Express (2-3 days)' },
+          { value: 'overnight', label: 'Overnight' },
+        ]}
+      />
+    )
+  },
 }
 
-export const RadioGroupWithHelper: StoryObj<typeof radioMeta> = {
-  render: () => (
-    <RadioGroup
-      legend="Product safety rating"
-      name="rating"
-      options={[
-        { value: 'safe', label: 'Safe', helperText: 'All ingredients are safe' },
-        { value: 'caution', label: 'Review needed', helperText: 'Some ingredients need review' },
-        { value: 'avoid', label: 'Avoid', helperText: 'Contains harmful ingredients' },
-      ]}
-    />
-  ),
+export const GroupRadioWithHelper: StoryObj<typeof radioMeta> = {
+  render: () => {
+    const GroupComponent = RadioGroup
+    return (
+      <GroupComponent
+        legend="Product safety rating"
+        name="rating"
+        options={[
+          { value: 'safe', label: 'Safe', helperText: 'All ingredients are safe' },
+          { value: 'caution', label: 'Review needed', helperText: 'Some ingredients need review' },
+          { value: 'avoid', label: 'Avoid', helperText: 'Contains harmful ingredients' },
+        ]}
+      />
+    )
+  },
 }
 
 // FORM EXAMPLE
