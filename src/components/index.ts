@@ -14,3 +14,11 @@ export { ProductDetail } from './ProductDetail'
 export { RatingDisplay } from './RatingDisplay'
 export { IngredientDetailCard } from './IngredientDetailCard'
 export { ComparisonTable } from './ComparisonTable'
+
+// Phase 4: Shopping & Lists
+export { CartItem } from './CartItem'
+export { SavedProductCard } from './SavedProductCard'
+export { ShoppingList } from './ShoppingList'
+export { EmptyState } from './EmptyState'
+export { Modal } from './Modal'
+export { Toast } from './Toast'
