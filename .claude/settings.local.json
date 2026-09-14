@@ -13,7 +13,8 @@
       "Bash(git commit -m 'Add Phase 3 completion details and comprehensive Figma screens specification *)",
       "Bash(git commit -m 'Add comprehensive build completion summary and project status *)",
       "Bash(git commit *)",
-      "Bash(git -C \"/Users/michaelthibodeau/Library/Mobile Documents/com~apple~CloudDocs/Projects/claudeBased Code\" log --oneline)"
+      "Bash(git -C \"/Users/michaelthibodeau/Library/Mobile Documents/com~apple~CloudDocs/Projects/claudeBased Code\" log --oneline)",
+      "Bash(find /Users/michaelthibodeau -name \"*AI-Portfolio*\" -o -name \"*Meridian*\" 2>/dev/null | head -20)"
     ]
   }
 }
